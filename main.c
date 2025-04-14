@@ -15,6 +15,8 @@ int main(void)
     SetExitKey(KEY_NULL);
     
     Rectangle player = {20,20,50,50};
+    player.x = 20;
+    player.y = 20;
     
     
     
@@ -23,6 +25,29 @@ int main(void)
     {
         //Movement
         //if key press player.x or y ++ or --
+        if(IsKeyDown(KEY_D))
+        {
+            
+            player.x += 10;
+        }
+        
+        if(IsKeyDown(KEY_A))
+        {
+            
+            player.x -= 10;
+        }
+        
+        if(IsKeyDown(KEY_W))
+        {
+            
+            player.y -= 10;
+        }
+        
+        if(IsKeyDown(KEY_S))
+        {
+            
+            player.y += 10;
+        }
         
         //Render
         BeginDrawing();
@@ -35,6 +60,7 @@ int main(void)
     //This is probably not needed
     if(WindowShouldClose())
     {
+        
             return 0;
     }
     
